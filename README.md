@@ -1,5 +1,5 @@
-# RTW Readiness Prediction in Cancer Survivors
-### Predicting Return-to-Work Readiness using Machine Learning
+# AI-enabled Return-to-Work Decision Support (PoV)
+### Predicting Return-to-Work Readiness in Cancer Survivorship using Machine Learning
 
 ---
 
@@ -7,7 +7,21 @@
 
 Cancer survivors often face profound uncertainty when contemplating a return to work. Physical fatigue, cognitive impairment, psychological distress, and unsupportive workplace environments can all combine to make RTW a challenging and poorly understood process. Currently, there is no structured, data-driven tool for healthcare professionals to objectively assess a patient's readiness to return to work.
 
-This project asks: **Can machine learning identify cancer survivors who need additional support before resuming employment?**
+This project demonstrates how machine learning can support **healthcare and public sector decision-making** by predicting return-to-work (RTW) readiness among cancer survivors.
+
+It combines clinical, psychological, and workplace factors into an interpretable scoring model and interactive frontend, showcasing a **proof-of-value (PoV)** aligned with healthcare transformation and workforce reintegration use cases.
+
+---
+
+## 🧩 Business Value
+
+This solution demonstrates how AI can support:
+
+- **Healthcare providers**: identify patients who require additional rehabilitation before returning to work  
+- **Employers**: design targeted workplace reintegration strategies  
+- **Public sector agencies**: improve workforce participation and policy planning  
+
+By combining clinical and socio-economic factors, this PoV illustrates how **data-driven insights can enhance decision-making and service delivery**.
 
 ---
 
@@ -96,6 +110,37 @@ This aligns with Ullrich et al. (2022) finding unambitious and resigned work beh
 
 ---
 
+## 🖥️ Interactive Demo (Streamlit PoV)
+
+An interactive frontend was developed using Streamlit to simulate a real-world decision support tool.
+
+Users can:
+- Input patient and workplace characteristics
+- View predicted RTW readiness probability
+- Understand key positive and negative contributing factors
+
+Run locally:
+streamlit run app/streamlit_app.py
+
+---
+
+## ☁️ Proposed Cloud Architecture (AWS)
+
+This PoV can be extended into a scalable cloud-based solution:
+
+- **Frontend**: Streamlit web application  
+- **API Layer**: AWS API Gateway  
+- **Backend Logic**: AWS Lambda  
+- **Model Hosting**: AWS SageMaker endpoint  
+- **Data Storage**: Amazon S3  
+
+### Data Flow
+
+User → Streamlit UI → API Gateway → Lambda → SageMaker → Prediction → UI
+
+This architecture aligns with public sector requirements for scalability, security, and modular deployment.
+
+
 ## Implications for Care Teams
 
 1. **Screen fatigue and RTW confidence early** — these are the two most actionable, modifiable predictors
@@ -133,19 +178,17 @@ rtw-readiness-ml/
 
 ---
 
-## How to Run
+### 🚀 How to Run
 
-```bash
 # Install dependencies
-pip install scikit-learn pandas numpy matplotlib seaborn scipy
+pip install -r requirements.txt
 
-# Run the full pipeline
+# Run ML pipeline
 cd model
 python train_evaluate.py
 
-# Dataset is saved to data/synthetic_rtw_dataset.csv
-# Visuals are saved to visuals/
-```
+# Run Streamlit app
+streamlit run app/streamlit_app.py
 
 ---
 
@@ -159,3 +202,12 @@ python train_evaluate.py
 6. den Bakker, C.M., et al. (2018). Prognostic factors for return to work and work disability among colorectal cancer survivors. *PLOS ONE*, 13(8).
 7. Forbes, D., et al. (2024). Factors beyond diagnosis and treatment associated with return to work in Australian cancer survivors. *Asia-Pac J Clin Oncol*, 20, 198–209.
 8. Hoving, J.L., et al. (2009). Return to work of breast cancer survivors: a systematic review of intervention studies. *BMC Cancer*, 9, 117.
+
+
+
+---
+
+## 👩‍💻 Author
+
+Nina Hoang  
+Healthcare IT & Data Transformation | AI & Analytics | Public Sector Innovation
